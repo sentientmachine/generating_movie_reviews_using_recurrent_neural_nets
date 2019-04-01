@@ -25,14 +25,27 @@ A short script can join all the separate review files into a single file that ha
 Keeping things as simple as possible, bash commands can do this quickly:
 
     cd ~/aclImdb/train/pos
-    cat * > positive_movie_reviews.txt
+    for f in *.txt; do (cat "${f}"; echo) >> positive_movie_reviews.txt; done
 
 And
 
     cd ~/aclImdb/train/neg
-    cat * > negative_movie_reviews.txt
+    for f in *.txt; do (cat "${f}"; echo) >> negative_movie_reviews.txt; done
 
 
-# See a few example rows:
+# See an example of a positive movie review:
+
+    $ head -n 1 positive_movie_reviews.txt
+
+"Bromwell High is a cartoon comedy. It ran at the same time as some other programs about school life, such as "Teachers". My 35 years in the teaching profession lead me to believe that Bromwell High's satire is much closer to reality than is "Teachers". The scramble to survive financially, the insightful students who can see right through their pathetic teachers' pomp, the pettiness of the whole situation, all remind me of the schools I knew and their students. When I saw the episode in which a student repeatedly tried to burn down the school, I immediately recalled ......... at .......... High. A classic line: INSPECTOR: I'm here to sack one of your teachers. STUDENT: Welcome to Bromwell High. I expect that many adults of my age think that Bromwell High is far fetched. What a pity that it isn't!"
+
+
+
+# See an example of a negative movie review:
+
+    $ head -n 1 negative_movie_reviews.txt
+
+"Story of a man who has unnatural feelings for a pig. Starts out with a opening scene that is a terrific example of absurd comedy. A formal orchestra audience is turned into an insane, violent mob by the crazy chantings of it's singers. Unfortunately it stays absurd the WHOLE time with no general narrative eventually making it just too off putting. Even those from the era should be turned off. The cryptic dialogue would make Shakespeare seem easy to a third grader. On a technical level it's better than you might think with some good cinematography by future great Vilmos Zsigmond. Future stars Sally Kirkland and Frederic Forrest can be seen briefly."
+
 
 
