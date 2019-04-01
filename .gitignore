@@ -4,6 +4,10 @@
 .my.cnf
 any_password_file
 
+#no keras things in repo.
+keras
+keras/*
+
 #Never store the .git directory or anything underneath it:
 .git/
 
