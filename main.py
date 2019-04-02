@@ -13,6 +13,8 @@ import random
 from datetime import datetime, timedelta
 from urllib.request import urlopen
 
+from keras.utils import to_categorical as one_hot
+
 #num iterations says how long to train
 num_iterations = 3000    #6000 takes an hour to train and generates good text
 
@@ -88,7 +90,6 @@ model_predicting = create_LSTM_model(lstm_size, 1, None)
 
 
 
-from tensorflow.keras.utils import to_categorical as one_hot
 
 def generate_text(seed, len_test_txt=500):
     global model_predicting
