@@ -15,15 +15,17 @@ from urllib.request import urlopen
 
 from keras.utils import to_categorical as one_hot
 
-#num iterations says how long to train
-num_iterations = 3000    #6000 takes an hour to train and generates good text
+#9000 iterations takes about an hour long to train.
+
+num_iterations = 9000    #6000 takes an hour to train and generates good text
+
 
 #load the data file of positive movie reviews into main python3 memory:
 #make everything lowercase:
-#txt = open('positive_movie_reviews.txt', 'r').read().lower()
+txt = open('positive_movie_reviews.txt', 'r').read().lower()
 #txt = open('positive_movie_reviews_small.txt', 'r').read().lower()
 
-txt = open('strata_abstracts.txt', 'r').read().lower()
+#txt = open('strata_abstracts.txt', 'r').read().lower()
 
 #show number of characters we have to work with
 print(len(txt)) 
